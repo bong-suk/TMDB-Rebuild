@@ -4,25 +4,25 @@ main {
   justify-content: space-around;
 }
 
-.movie-card {
+.movie-card-main {
   display: flex;
   flex-direction: column;
   width: 200px;
   height: 300px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
   border: 1px solid #ccc;
 }
-.movie-poster {
-  width: 180px;
+.movie-poster-main {
+  width: auto;
   height: 230px;
 }
-.movie-title {
+.movie-title-main {
   height: 30px;
   align-self: flex-start;
 }
-.movie-rating {
+.movie-rating-main {
   height: 30px;
   align-self: self-end;
 }

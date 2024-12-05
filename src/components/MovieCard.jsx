@@ -3,18 +3,16 @@ import "./MovieCard.css";
 
 const MovieCard = (item) => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/details");
-  };
+
   return (
-    <div className="movie-card" onClick={handleClick}>
+    <div className="movie-card-main" onClick={() => navigate("/details")}>
       <img
-        className="movie-poster"
+        className="movie-poster-main"
         src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
         alt="poster"
       ></img>
-      <p className="movie-title">{item.title}</p>
-      <p className="mivie-rating">{item.vote_average}</p>
+      <p className="movie-title-main">{item.title}</p>
+      <p className="movie-rating-main">{item.vote_average}</p>
     </div>
   );
 };
