@@ -13,7 +13,7 @@ const MovieDetail = () => {
       <div className="movie-info">
         <div className="movie-header">
           <p className="movie-title">{movieDetail.title}</p>
-          <p className="movie-rating">{movieDetail.vote_average}</p>
+          <p className="movie-rating">⭐{movieDetail.vote_average}</p>
         </div>
         <p className="movie-genres">
           {movieDetail.genres.map((genre) => {

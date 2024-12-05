@@ -12,7 +12,7 @@ const MovieCard = (item) => {
         alt="poster"
       ></img>
       <p className="movie-title-main">{item.title}</p>
-      <p className="movie-rating-main">{item.vote_average}</p>
+      <p className="movie-rating-main">⭐{item.vote_average}</p>
     </div>
   );
 };
