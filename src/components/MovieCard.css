@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+.movie-poster {
+  width: 180px;
+  height: 230px;
+}
+.movie-title {
+  height: 30px;
+  align-self: flex-start;
+}
+.movie-rating {
+  height: 30px;
+  align-self: self-end;
+}
