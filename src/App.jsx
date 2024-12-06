@@ -1,14 +1,12 @@
 import "./App.css";
 import { MovieListProvider } from "./contexts/MovieListContext.jsx";
 import AppRoutes from "./routes";
-import Navbar from "./components/Layout.jsx";
-import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Outlet />
       <MovieListProvider>
         <AppRoutes />
       </MovieListProvider>
