@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import NavBar from "./NavBar";
+import Navbar from "./Navbar";
 const Layout = () => (
   <>
-    <NavBar />
+    <Navbar />
     <main>
       <Outlet />
     </main>
