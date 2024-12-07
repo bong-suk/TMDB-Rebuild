@@ -5,7 +5,10 @@ const MovieCard = (item) => {
   const navigate = useNavigate();
 
   return (
-    <div className="movie-card-main" onClick={() => navigate("/details")}>
+    <div
+      className="movie-card-main"
+      onClick={() => navigate(`/details/${item.id}`)}
+    >
       <img
         className="movie-poster-main"
         src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}

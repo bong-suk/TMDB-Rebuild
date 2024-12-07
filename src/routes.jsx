@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 
 const AppRoutes = () => {
   const { movieList } = useContext(MovieListContext);
+  const filteredMovieList = movieList.filter((movie) => !movie.adult);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -14,13 +15,13 @@ const AppRoutes = () => {
           path="/"
           element={
             <main>
-              {movieList.map((item) => {
+              {filteredMovieList.map((item) => {
                 return <MovieCard key={item.id} {...item} />;
               })}
             </main>
           }
         />
-        <Route path="/details" element={<MovieDetail />} />
+        <Route path="/details/:id" element={<MovieDetail />} />
       </Route>
     </Routes>
   );

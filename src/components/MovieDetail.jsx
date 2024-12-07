@@ -1,9 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./MovieDetail.css";
-import movieDetailData from "../../data/movieDetailData.json";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const MovieDetail = () => {
-  const [movieDetail] = useState(movieDetailData);
+  const { id } = useParams();
+  const [movieDetail, setMovieDetail] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      setIsLoading(true);
+      try {
+        const apiKey = import.meta.env.VITE_API_KEY;
+        const accessToken = import.meta.env.VITE_ACCESS_TOKEN;
+        const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=ko-KR`;
+        const response = await axios.get(apiUrl, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        setMovieDetail(response.data);
+      } catch (error) {
+        console.error("영화 상세 정보를 가져오는 중 오류 발생:", error);
+        setError(
+          "영화 상세 정보를 가져오는 데 실패했습니다. 잠시 후 다시 시도해주세요."
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchMovieDetails();
+  }, [id]);
+
+  if (isLoading) {
+    return <div>로딩 중...</div>;
+  }
+  if (error) {
+    return <div>에러: {error}</div>;
+  }
   return (
     <div className="movie-detail">
       <img
