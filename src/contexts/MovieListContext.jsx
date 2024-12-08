@@ -14,7 +14,10 @@ const MovieListProvider = ({ children }) => {
         const apiKey = import.meta.env.VITE_API_KEY;
         const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=ko-KR`;
         const response = await axios.get(apiUrl);
-        setMovieList(response.data.results);
+        const filteredMovieList = response.data.results.filter(
+          (movie) => !movie.adult
+        );
+        setMovieList(filteredMovieList);
       } catch (error) {
         console.error("영화 목록을 가져오는 중 오류 발생:", error);
         setError("영화 목록을 가져오는 데 실패했습니다.");
