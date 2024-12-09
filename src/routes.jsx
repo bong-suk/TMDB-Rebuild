@@ -1,12 +1,26 @@
 import { Route, Routes } from "react-router-dom";
 import MovieCard from "./components/MovieCard";
 import MovieDetail from "./components/MovieDetail";
-import { MovieListContext } from "./contexts/MovieListContext";
-import { useContext } from "react";
+import { useEffect, useState } from "react";
 import Layout from "./components/Layout";
+import { getMovieList } from "./axios";
 
 const AppRoutes = () => {
-  const { movieList } = useContext(MovieListContext);
+  const [movieList, setMovieList] = useState([]);
+
+  useEffect(() => {
+    const fetchMovieList = async () => {
+      try {
+        const data = await getMovieList();
+        setMovieList(data);
+      } catch (error) {
+        console.error("영화 목록을 가져오는 중 오류 발생:", error);
+      }
+    };
+
+    fetchMovieList();
+  }, []);
+
   const filteredMovieList = movieList.filter((movie) => !movie.adult);
   return (
     <Routes>
