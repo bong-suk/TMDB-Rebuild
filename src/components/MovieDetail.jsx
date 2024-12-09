@@ -1,26 +1,20 @@
 import { useEffect, useState } from "react";
 import "./MovieDetail.css";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { getMovieDetail } from "../axios";
 
 const MovieDetail = () => {
   const { id } = useParams();
   const [movieDetail, setMovieDetail] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     const fetchMovieDetails = async () => {
       setIsLoading(true);
       try {
-        const apiKey = import.meta.env.VITE_API_KEY;
-        const accessToken = import.meta.env.VITE_ACCESS_TOKEN;
-        const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=ko-KR`;
-        const response = await axios.get(apiUrl, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
-        setMovieDetail(response.data);
+        const data = await getMovieDetail(id);
+        setMovieDetail(data);
       } catch (error) {
         console.error("영화 상세 정보를 가져오는 중 오류 발생:", error);
         setError(
