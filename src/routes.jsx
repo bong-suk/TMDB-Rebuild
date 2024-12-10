@@ -4,6 +4,7 @@ import MovieDetail from "./components/MovieDetail";
 import { useEffect, useState } from "react";
 import Layout from "./components/Layout";
 import { getMovieList } from "./axios";
+import SearchResults from "./components/Search";
 
 const AppRoutes = () => {
   const [movieList, setMovieList] = useState([]);
@@ -36,6 +37,7 @@ const AppRoutes = () => {
           }
         />
         <Route path="/details/:id" element={<MovieDetail />} />
+        <Route path="/search" element={<SearchResults />} />
       </Route>
     </Routes>
   );
