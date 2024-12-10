@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import { useDebounce } from "./useDebounce";
 import searchMovies from "../axios";
-
+import "./search.css";
 const SearchResults = () => {
   const [movieList, setMovieList] = useState([]);
   const useQuery = () => {

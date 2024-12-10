@@ -4,7 +4,7 @@ import "./MovieCard.css";
 const MovieCard = (item) => {
   return (
     <Link to={`/details/${item.id}`}>
-      <div className="movie-card-main" style={{ width: "200px" }}>
+      <div className="movie-card-main">
         <img
           className="movie-poster-main"
           src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}

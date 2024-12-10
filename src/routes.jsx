@@ -27,7 +27,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route
-          path="/"
+          index
           element={
             <main>
               {filteredMovieList.map((item) => {
