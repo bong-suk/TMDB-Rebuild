@@ -1,0 +1,112 @@
+.signup-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+}
+
+.signup-form {
+  width: 400px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.signup-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Input 컴포넌트 스타일 오버라이드 */
+.input-container input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.signup-button {
+  width: 100%;
+  padding: 15px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.error-message {
+  color: #ff4081;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.signup-options {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-option-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.signup-option-link:hover {
+  color: #fff;
+}
+
+/* 소셜 회원가입 버튼 스타일 */
+.social-signup-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-signup-button {
+  flex: 1;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-signup-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
