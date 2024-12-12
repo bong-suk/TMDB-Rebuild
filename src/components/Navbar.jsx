@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import { useSupabaseAuth } from "../contexts/useSupabaseAuth";
 import { useDebounce } from "../hooks/useDebounce";
-import "./navbar.css";
+import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
