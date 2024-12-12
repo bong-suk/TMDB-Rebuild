@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { searchMovies } from "../axios.jsx";
 import MovieCard from "./MovieCard";
-import "./Search.css";
+import "./search.css";
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
