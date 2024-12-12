@@ -17,7 +17,7 @@ export const useSocialAuth = () => {
           },
         },
       });
-
+      console.log(data);
       if (error) throw error;
       return data;
     } catch (error) {
