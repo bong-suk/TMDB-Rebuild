@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar"; // 확장자 제거
+import Navbar from "./Navbar";
 import "./Layout.css";
 
 const Layout = () => {
