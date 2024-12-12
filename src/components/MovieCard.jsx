@@ -65,7 +65,7 @@ const MovieCard = () => {
       }, 500); // 500ms 쓰로틀링
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (timeoutId) clearTimeout(timeoutId);
