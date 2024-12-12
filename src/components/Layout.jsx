@@ -1,12 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar.jsx"; // Navbar.jsx로 수정 (파일 이름과 정확히 일치)
+import Navbar from "./Navbar"; // 확장자 제거
 import "./Layout.css";
 
 const Layout = () => {
   return (
     <div className="layout">
-      <Navbar /> {/* 컴포넌트 사용시에도 Navbar로 수정 */}
+      <Navbar />
       <main className="main-content">
         <div className="container">
           <Outlet />
