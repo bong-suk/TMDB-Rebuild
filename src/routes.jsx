@@ -8,6 +8,7 @@ import { getMovieList } from "./axios";
 import SearchResults from "./components/Search";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import MyPage from "./pages/MyPage";
 
 const AppRoutes = () => {
   const [movieList, setMovieList] = useState([]);
@@ -50,6 +51,7 @@ const AppRoutes = () => {
         <Route path="/search" element={<SearchResults />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/mypage" element={<MyPage />} />
       </Route>
     </Routes>
   );
