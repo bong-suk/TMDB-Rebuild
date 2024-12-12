@@ -5,7 +5,7 @@ import { useSupabaseAuth } from "../contexts/useSupabaseAuth";
 import { useDebounce } from "../hooks/useDebounce";
 import "./Navbar.css";
 
-const NavBar = () => {
+const Navbar = () => {
   const navigate = useNavigate();
   const { user, setUser } = useUser();
   const { logout } = useSupabaseAuth();
@@ -125,4 +125,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
