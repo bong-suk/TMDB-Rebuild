@@ -76,7 +76,7 @@ const SignUp = () => {
               setFormData({ ...formData, userName: e.target.value })
             }
             error={errors.userName}
-            placeholder="이름을 입력하세요"
+            placeholder="이름은 2~8자의 한글, 영문, 숫자만 가능합니다"
           />
           <Input
             label="이메일"
@@ -86,7 +86,7 @@ const SignUp = () => {
               setFormData({ ...formData, email: e.target.value })
             }
             error={errors.email}
-            placeholder="이메일을 입력하세요"
+            placeholder="sample@sample.com"
           />
           <Input
             label="비밀번호"
@@ -96,7 +96,7 @@ const SignUp = () => {
               setFormData({ ...formData, password: e.target.value })
             }
             error={errors.password}
-            placeholder="비밀번호를 입력하세요"
+            placeholder="비밀번호는 최소 6자 이상이어야 합니다"
           />
           <Input
             label="비밀번호 확인"
